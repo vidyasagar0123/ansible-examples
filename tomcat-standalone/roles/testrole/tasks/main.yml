@@ -1,0 +1,13 @@
+---
+- name: Deploy HelloWorld to Tomcat
+  copy:
+    src: jboss-helloworld.war
+    dest: /opt/apache-tomcat-7.0.61/webapps/jboss-helloworld.war
+
+- name: Deploy Ticket Monster to Tomcat
+  copy:
+    src: ticket-monster.war
+    dest: /opt/apache-tomcat-7.0.61/webapps/ticket-monster.war
+
+- name: Restart Tomcat
+  service: name=tomcat state=restarted
